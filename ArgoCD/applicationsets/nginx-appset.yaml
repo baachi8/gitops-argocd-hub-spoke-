@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          env: dev
+  template:
+    metadata:
+      name: nginx-{{name}}
+    spec:
+      project: platform
+      source:
+        repoURL: https://github.com/YOUR_USERNAME/gitops-argocd-hub-spoke
+        targetRevision: main
+        path: apps/nginx-app/overlays/{{metadata.labels.env}}
+      destination:
+        server: '{{server}}'
+        namespace: nginx
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
