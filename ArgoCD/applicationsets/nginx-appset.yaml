@@ -9,13 +9,17 @@ spec:
       selector:
         matchLabels:
           env: dev
+  - clusters:
+      selector:
+        matchLabels:
+          env: prod
   template:
     metadata:
       name: nginx-{{name}}
     spec:
       project: platform
       source:
-        repoURL: https://github.com/YOUR_USERNAME/gitops-argocd-hub-spoke
+        repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke-
         targetRevision: main
         path: apps/nginx-app/overlays/{{metadata.labels.env}}
       destination:
