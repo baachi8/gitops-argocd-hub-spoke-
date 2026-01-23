@@ -19,7 +19,7 @@ spec:
     spec:
       project: platform
       source:
-        repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke-
+        repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke
         targetRevision: main
         path: apps/nginx-app/overlays/{{metadata.labels.env}}
       destination:

@@ -1,4 +1,3 @@
-#This file denotes rules what ArgoCD have to do
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -6,8 +5,7 @@ metadata:
   namespace: argocd
 spec:
   sourceRepos:
-  - https://github.com/YOUR_USERNAME/gitops-argocd-hub-spoke
+  - https://github.com/baachi8/gitops-argocd-hub-spoke
   destinations:
   - namespace: nginx #defines where to deploy
     server: '*'
-
