@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   sourceRepos:
-  - https://github.com/baachi8/gitops-argocd-hub-spoke
+  - https://github.com/baachi8/gitops-argocd-hub-spoke.git
   destinations:
   - namespace: nginx #defines where to deploy
     server: '*'

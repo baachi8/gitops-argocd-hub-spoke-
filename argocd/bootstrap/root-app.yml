@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke
+    repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke.git
     targetRevision: main
     path: argocd
   destination:
