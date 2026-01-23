@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/baachi8/gitops-argocd-hub-spoke
+    targetRevision: main
+    path: argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ArgoCD
+  syncPolicy:
+    automated:
+      prune: true #if anything deletes from git it will delets in the cluster
+      selfHeal: true # if any human errors has done manually it will slef heal accroding the git instructions
+  
+
+

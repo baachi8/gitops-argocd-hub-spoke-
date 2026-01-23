@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: platform
+  namespace: argocd
+spec:
+  sourceRepos:
+  - https://github.com/baachi8/gitops-argocd-hub-spoke
+  destinations:
+  - namespace: nginx #defines where to deploy
+    server: '*'
